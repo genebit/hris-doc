@@ -1,4 +1,4 @@
-# b. Building the Application
+# b. Building the Application ❗️
 
 To build the application, we create a `build` directory under `public` for the website's Vite compiled assets.
 

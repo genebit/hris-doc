@@ -1,4 +1,4 @@
-# 📍 d. UI Components
+# d. UI Components ❗️
 
 Livewire v3 is heavily used throughout the application. To understand some of the components and attributes used in the code, we suggest you take a read first at the official documentation from Livewire and AlpineJS.
 
