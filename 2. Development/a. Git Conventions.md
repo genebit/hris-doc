@@ -98,4 +98,4 @@ When creating requests make sure to tag them through milestones. Increment them 
 
 ➡️ Next up!
 
-[[b. Code Conventions]]
+[[b. Project Architecture]]

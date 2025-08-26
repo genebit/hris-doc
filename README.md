@@ -10,7 +10,7 @@
 1. [About the Project](#about)
 2. [[1. Project Setup/a. Prerequisites|Prerequisites]]
 3. [[Setting LAN Connection]]
-4. [[b. Code Conventions]]
+4. [[c. Code Conventions]]
 5. [[a. Git Conventions]]
 6. [License](#license)
 7. [Contributors](#contributors)
