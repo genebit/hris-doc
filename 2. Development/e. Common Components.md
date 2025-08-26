@@ -1,6 +1,6 @@
 # e. Common Components
 
-## Page
+## Page Directives
 
 The page already has directives setup and used throughout the application. *view `app/Providers/AppServiceProvider.php`*. The available directives are:
 
@@ -191,9 +191,190 @@ The content of the modal is designed as such:
 
 ### Filter Table
 
-#### Datatables
+Filter table are custom Livewire components built for filtering tables. This can be found all throughout forms as they are a requirement for HR to filter out fields.
 
+#### Data-tables
+
+Data-tables are written paired with [Datatables.net](https://datatables.net/). The jQuery plugin provides server-side rendering as well as client-side. In HRIS, we both utilize these depending on the performance needs of the application. 
+
+For large records e.g., employee attendance, server-side processing is the go-to approach. For small records e.g., less than 1000, we use client-side.
+
+To learn more on how to define these, view the [official documentation](https://datatables.net/examples/data_sources/server_side.html)
+
+A sample usage is:
+
+```js
+$(function() {
+	const $table = $('#personTbl');
+
+	let table = $table.DataTable(window.baseDtConfig);
+	let tableFilters = {};
+
+	Livewire.on('filterTable', (filters) => {
+		tableFilters = {...};
+
+	$.ajax({
+		url: '{{ route('api.personal.info.filter') }}',
+		data: tableFilters,
+		success: function(response) {
+			Livewire.dispatch('filtering');
+
+			// Destroy the existing DataTable
+			if ($.fn.DataTable.isDataTable('#personTbl')) {
+				table.destroy();
+			}
+
+			// Transform data to the required format
+			let tableData = response.map(function(item) {
+				return {...};
+			});
+
+			table = $table.DataTable({
+				dom: window.dtPagination,
+				pageLength: 25,
+				scrollX: true,
+				lengthMenu: window.dtLengthMenuShort,
+				language: window.dtLanguage,
+				data: tableData,
+				deferRender: true,
+				order: [...],
+				fixedColumns: {
+					leftColumns: 1,
+					rightColumns: 0
+				},
+				columns: [...],
+				createdRow: function(row, data, dataIndex) {
+					window.initTooltip($table);
+					window.dtClickSelectHighlightLev0(row);
+				}
+			});
+
+			window.adjustTableColumns(table, 400);
+		},
+		error: function(jqXHR, textStatus, errorThrown) {...}
+	});
+});
+```
+
+For server-side rendering:
+
+```js
+const $table = $('#attendanceTbl');
+
+let table = $table.DataTable(window.baseDtConfig);
+
+Livewire.on('rowSelected', (rowId) => {
+	// Destroy the existing DataTable
+	if ($.fn.DataTable.isDataTable('#attendanceTbl')) {
+		table.destroy();
+	}
+
+	table = $table.DataTable({
+		processing: true,
+		serverSide: true,
+		scrollX: true,
+		searchDelay: 350,
+		pageLength: 5,
+		dom: window.dtPagination,
+		lengthMenu: window.dtLengthMenuShort,
+		language: window.dtLanguage,
+		ajax: function(data, callback, settings) {
+			// Set the filter values to the Livewire component
+			// to be used for filterTable func.
+			@this.set('tableFilters', window.dtSetTableFilters(data));
+			@this.call('filterTable');
+
+			// This is fired from the filterTable func.
+			// Update the table with the filtered data.
+			Livewire.on('tableFiltered', response => {
+				callback(window.dtSetResponse(response));
+				window.adjustTableColumns(table);
+			});
+		},
+		columns: [...],
+		createdRow: function(row, data, dataIndex) {...},
+	});
+});
+```
+
+### Data-table Custom Utilities
+
+Custom utilities are built to reduce redundancy in writing the same code.  They can be found and managed under `resources/js/dt.js`.
+
+#### Global Utilities
+
+These are functions for setting up data tables to reduce code.
+
+| Utility function                              | Purpose                                                                                                                                                       |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `window.dtSetTableFilters(data)`              | Maps DataTables request payload into a backend-friendly format (`draw`, `limit`, `offset`, `order`, `search`). **Used on server-side processing**             |
+| `window.dtSetResponse(response)`              | Maps backend response into a DataTables-friendly response (`draw`, `recordsTotal`, `recordsFiltered`, `data`). **Used on server-side processing**             |
+| `window.adjustTableColumns(table, delay=200)` | Adjusts table column widths after rendering or resizing (wrapper for `table.columns.adjust()`).                                                               |
+| `window.initTooltip(element)`                 | Initializes a custom tooltip on hover, positioned relative to its parent. **Used on `createdRow` property**                                                   |
+| `window.dtClickSelectHighlightLev0(row)`      | Handles **row highlighting** for top-level tables. Clears selection when sidebar closes. **Used on `createdRow` property**                                    |
+| `window.dtClickSelectHighlightLev1(row)`      | Handles **row highlighting** for tables inside a sidebar/off-canvas. Clears selection when `clearTblSelection` event fires. **Used on `createdRow` property** |
+| `window.dtClickSelectHighlightLev2(row)`      | Handles **row highlighting** for nested tables inside sidebar. Clears selection when `clearTblRowSelection` event fires. **Used on `createdRow` property**    |
+
+#### Column Utilities
+
+These are columns used in the property `columns` in datatable. These functions can be used as such:
+
+```js
+$table.DataTable({
+	columns: [
+	{
+		data: 'public_id',
+		className: 'hover-scale',
+		render: function(data, type, row) {
+			return window.dataBadged(data);
+		}
+	},
+	{
+		data: 'unit_name',
+		className: 'hover-scale',
+		render: function(data, type, row) {
+			return window.dataOrNull(data);
+		}
+	}]
+```
+
+| Utility function                  | Purpose |
+|----------------------------------|---------|
+| `window.dataOrNull(data)`         | Returns value or a styled `"Unassigned"` placeholder if empty. |
+| `window.dataBadged(data)`         | Displays data inside a badge-like styled element, or `"Unassigned"` if empty. |
+| `window.dataWithIcon(data)`       | Displays data alongside an icon (e.g., `<i class="..."></i> value`). |
+| `window.formatDate(data)`         | Formats date into `MMM DD, YYYY` with a calendar icon. |
+| `window.formatDateWithTime(data)` | Formats datetime into `MMM DD, YYYY h:mm AM/PM` with a calendar icon. |
+| `window.formatTime(data)`         | Formats and displays time only (`h:mm AM/PM`) with a clock icon. |
+| `window.dataSeeMore(data)`        | Truncates long text to `length` characters and provides “See more/less” toggle. |
 #### Info. Card
+
+`info-card` components are Livewire components usually found when a CRUD operation is needed. `info-card` components are usually created in separated files in order to isolate CRUD operations to a single file.
+
+An `info-card` will often have this structure:
+
+```html
+<div x-show="mngWorkSched" x-transition>
+    <div class="tw-animate-in tw-fade-in" x-data="{ editing: false }">
+        <div class="row gx-2">
+            <div class="mt-3 col-lg-12">
+                <x-alert theme="secondary">
+                    <!-- Notes/tips goes here... -->
+                </x-alert>
+            </div>
+        </div>
+        @include('modules.sys.timesys....partials.ws-manage-card')
+        @include('modules.sys.timesys....partials.ws-create-card')
+    </div>
+</div>
+@script
+    <script>
+        $(function() {...}
+    </script>
+@endscript
+```
+
+Storing both partial views for managing cards and creating records. As these switch depending on `editing` mode values.
 
 ---
 
