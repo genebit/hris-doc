@@ -1,9 +1,9 @@
-# 📌 Prerequisites
+# a. Prerequisites
 
 Before cloning and running the application a list of requirements are required. The following technologies and libraries are required to run the application:
 
 ![My Skills](https://go-skill-icons.vercel.app/api/icons?i=nodejs,php,livewire,oracle,git,composer,vscode&theme=light)
-### Requirements:
+### Requirements
 
 1. PHP 8.1
 2. Oracle Instant Client 12c
