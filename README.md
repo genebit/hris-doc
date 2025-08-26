@@ -8,7 +8,7 @@
 <summary><b>Table of Contents</b></summary>
 
 1. [About the Project](#about)
-2. [[a. Prerequisites]]
+2. [[1. Project Setup/a. Prerequisites]]
 3. [[Setting LAN Connection]]
 4. [[b. Code Conventions]]
 5. [[a. Git Conventions]]

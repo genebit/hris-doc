@@ -1,4 +1,3 @@
-
-# Installation
+# 📌 Installation
 
 To install the appliaction

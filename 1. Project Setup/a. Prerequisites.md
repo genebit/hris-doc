@@ -2,6 +2,9 @@
 
 Before cloning and running the application a list of requirements are required. The following technologies and libraries are required to run the application:
 
+![My Skills](https://go-skill-icons.vercel.app/api/icons?i=nodejs,php,livewire,oracle,git,composer,vscode&theme=light)
+### Requirements:
+
 1. PHP 8.1
 2. Oracle Instant Client 12c
 3. OCI8 Configuration
@@ -13,8 +16,8 @@ Before cloning and running the application a list of requirements are required. 
 > *Note: for Linux Distros, make use of the Dockerfile as reference installing requirements.*
 
 4. Git
-5. NodeJS
-6. Composer
+5. [NodeJS v18](https://nodejs.org/en) above
+6. [Composer v2](https://getcomposer.org/) above
 7. Environment Variables `.env` for Local Development
 8. Code Editor e.g., *Visual Studio Code*
 
