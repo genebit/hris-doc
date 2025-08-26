@@ -1,12 +1,12 @@
 # b. Project Architecture
 
-The project follows a Model-View-Controller architecture with Livewire acting both as a Frontend state management while also injecting backend services e.g., dependency injection for queries/repositories.
+The project follows a **Model-View-Controller** architecture with **Livewire** acting both as a Frontend state management while also injecting backend services e.g., dependency injection for queries/repositories.
 
 ![[Project Architecture.png]]
 
 In this approach, we leverage Livewire's power by reducing the writing of JS server requests. 
 
-### 📁 Folder Structure
+### Folder Structure
 
 ```
 ├── app
@@ -99,7 +99,7 @@ For frontend development, we use the following structure:
 
 ### Project Scoping
 
-When working with the project, the project is designed to follow a hierarchy to clearly see which components/files are used within the directory. To maintain a clear structure we follow:
+When working with the project, the project is designed to follow a hierarchy to clearly see which components/files are used within the directory. To maintain a clear structure, we follow:
 
 ```
 └── modules
