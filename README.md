@@ -41,7 +41,7 @@ Additionally, as the university grows and evolves, the existing HRMO systems may
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## **Contributors**
+## **Project Contributors**
 
 -   **Sheila Mae DV. Avila** (Project Manager / Development Team Lead)
 -   **Johcel Gene T. Bitara** (Application Developer)
@@ -49,3 +49,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 -   **Maria Michaela P. Lorenzo** (System Analyst/Technical Writer)
 -   **Jesus SJ. Tabinas, Jr.** (Database Administrator)
 -   **Ryan Jay D. Rosano** (Information Systems Administrator)
+
+## **Documentation Author**
+
+- **Johcel Gene T. Bitara** (Application Developer)
+- genebitara@gmail.com | jbitara@gbox.adnu.edu.ph
