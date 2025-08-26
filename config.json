@@ -4,7 +4,7 @@
   "favicon": "/assets/favicon.ico",
   "nav": {
     "logo": "/assets/logo.png",
-    "title": "ADNU HRIS Developer Documentation",
+    "title": "Developer Documentation",
     "links": [
       {
         "href": "https://services.adnu.edu.ph/hris",
