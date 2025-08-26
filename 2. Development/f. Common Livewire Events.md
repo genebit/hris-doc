@@ -30,4 +30,4 @@ Among these operations include common events that are just reused from module to
 
 ➡️ Next up!
 
-[[g. Development Workflow]]
+[[g. Setting Privileges to Components]]
