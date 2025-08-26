@@ -1,7 +1,7 @@
 {
   "title": "Developer Documentation",
   "description": "A code documentation for ADNU HRIS written in Obsidian.",
-  "favicon": "/assets/favicon.ico",
+  "favicon": "/assets/logo.png",
   "nav": {
     "logo": "/assets/logo.png",
     "title": "Developer Documentation",
