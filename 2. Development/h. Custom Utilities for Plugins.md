@@ -1,7 +1,5 @@
 # h. Custom Utilities for Plugins ❗️
 
-#important
-
 Throughout the application, multiple global utilities are used to reduce redundancy in writing code. These functions are editable under `resources/js/app.js`.
 
 ### Global Window Utilities

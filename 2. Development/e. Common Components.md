@@ -1,7 +1,5 @@
 # e. Common Components ❗️
 
-#important 
-
 ## Page Directives
 
 The page already has directives setup and used throughout the application. *view `app/Providers/AppServiceProvider.php`*. The available directives are:

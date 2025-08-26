@@ -1,7 +1,5 @@
 # f. Common Livewire Events ❗️
 
-#important
-
 Since Livewire v3 is used all throughout the codebase, different kinds of events are dispatched for every operations. 
 
 Among these operations include common events that are just reused from module to module.
