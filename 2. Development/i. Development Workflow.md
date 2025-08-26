@@ -158,7 +158,7 @@ class SidebarOCJob extends Component
     private $baseRepository, $jobInstance;
 
     protected $listeners = [
-        'rowSelectedJB' => 'getJob',
+        'rowSelected' => 'getJob',
         'deleteJob',
         'close'
     ];
