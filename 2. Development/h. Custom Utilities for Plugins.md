@@ -1,4 +1,4 @@
-# h. Custom Utilities for Plugins
+# 📍h. Custom Utilities for Plugins
 
 Throughout the application, multiple global utilities are used to reduce redundancy in writing code. These functions are editable under `resources/js/app.js`.
 

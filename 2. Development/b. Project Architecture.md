@@ -1,4 +1,4 @@
-# b. Project Architecture
+# 📍 b. Project Architecture
 
 The project follows a **Model-View-Controller** architecture with **Livewire** acting both as a Frontend state management while also injecting backend services e.g., dependency injection for queries/repositories.
 

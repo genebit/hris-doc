@@ -1,4 +1,4 @@
-# a. Prerequisites
+# 📍a. Prerequisites
 
 Before cloning and running the application a list of requirements are required. The following technologies and libraries are required to run the application:
 

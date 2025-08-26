@@ -1,4 +1,4 @@
-# e. Common Components
+# 📍 e. Common Components
 
 ## Page Directives
 

@@ -1,4 +1,4 @@
-# f. Common Livewire Events
+# 📍 f. Common Livewire Events
 
 Since Livewire v3 is used all throughout the codebase, different kinds of events are dispatched for every operations. 
 
