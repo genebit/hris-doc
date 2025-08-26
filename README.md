@@ -8,7 +8,7 @@
 <summary><b>Table of Contents</b></summary>
 
 1. [About the Project](#about)
-2. [[1. Project Setup/a. Prerequisites]]
+2. [[1. Project Setup/a. Prerequisites|Prerequisites]]
 3. [[Setting LAN Connection]]
 4. [[b. Code Conventions]]
 5. [[a. Git Conventions]]
@@ -31,12 +31,7 @@ Additionally, as the university grows and evolves, the existing HRMO systems may
 
 #### **Technology Stack**
 
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![My Skills](https://go-skill-icons.vercel.app/api/icons?i=nodejs,php,livewire,oracle,tailwind,html,js,css,scss,composer&theme=light)
 
 #### **Resources Used**
 
