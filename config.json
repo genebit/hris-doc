@@ -1,3 +1,29 @@
 {
+  "title": "ADNU HRIS Developer Documentation",
+  "description": "A code documentation for ADNU HRIS written in Obsidian.",
+  "favicon": "/assets/favicon.ico",
+  "nav": {
+    "logo": "/assets/logo.png",
+    "title": "ADNU HRIS Developer Documentation",
+    "links": [
+      {
+        "href": "https://services.adnu.edu.ph/hris",
+        "name": "ADNU HRIS"
+      }
+    ],
+    "social": [
+      {
+        "label": "Github",
+        "name": "genebit",
+        "href": "https://github.com/genebit"
+      },
+      {
+        "label": "LinkedIn",
+        "name": "Johcel Gene T. Bitara",
+        "href": "https://www.linkedin.com/in/gene-bitara/"
+      }
+    ]
+  },
+  "showComments": true,
   "showSidebar": true
 }
