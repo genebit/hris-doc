@@ -1,0 +1,17 @@
+# Obsidian system files (workspace-specific, don't sync)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache
+.obsidian/graph.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups and temporary files
+*.bak
+*.swp
+*.swo
+*.tmp
+~$*
