@@ -1,1 +1,0 @@
-# g. Setting Privileges to Components

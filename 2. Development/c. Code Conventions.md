@@ -48,4 +48,4 @@ The project utilizes Laravel's standard conventions.
 
 ➡️ Next up!
 
-[[d. Common Components]]
+[[d. UI Components]]
