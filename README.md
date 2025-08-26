@@ -8,10 +8,10 @@
 <summary><b>Table of Contents</b></summary>
 
 1. [About the Project](#about)
-2. [[Prerequisites & Installation]]
+2. [[a. Prerequisites]]
 3. [[Setting LAN Connection]]
-4. [[Code Conventions]]
-5. [[Git Conventions]]
+4. [[b. Code Conventions]]
+5. [[a. Git Conventions]]
 6. [License](#license)
 7. [Contributors](#contributors)
  </details>
